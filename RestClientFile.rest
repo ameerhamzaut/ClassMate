@@ -1,0 +1,276 @@
+### Get all users
+GET http://localhost:8083/api/users
+
+### Get a User by id
+GET http://localhost:8083/api/users/402
+
+
+### Add an User  
+POST  http://localhost:8083/api/users HTTP/1.1
+content-type: application/json
+
+{
+   
+    "name": "Ameer",
+    "lastname": "Hamza",   
+    "personal_code": 388053804,
+    "password": "Ojus3",
+    "dob": "1997-04-12"  ,
+    "email": "m@gmail.com",
+    "phone_no": 372567890
+    
+
+}
+
+### Update an User
+PUT   http://localhost:8083/api/users/353 HTTP/1.1
+content-type: application/json
+
+{
+    "id": 353,
+    "firstname": "Ojus",
+    "lastname": "Tudavekar",   
+    "personal_code": 388053804,
+    "password": "Ojus",
+    "dob": "1997-04-12"  ,
+    "email": "m@gmail.com",
+    "phone_no": 372567890
+}
+
+### Delete an User
+DELETE    http://localhost:8083/api/users/354
+
+
+### Get all courses for a user
+GET http://localhost:8083/api/allcourses
+
+
+
+### Enroll to a course  
+POST  http://localhost:8083/api/users/enroll HTTP/1.1
+content-type: application/json
+
+{
+   
+    "userId": 2,
+    "courseId": 1
+
+}
+
+### Authenticate  
+POST    http://localhost:8083/api/authenticate HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Ojus3",
+    "password": "Ojus3"
+}
+
+
+#==============================================================#
+### Get all courses
+GET http://localhost:8081/api/courses
+
+### Get a Course by id
+GET http://localhost:8081/api/courses/ 
+
+### Add an Courses 
+POST  http://localhost:8081/api/courses HTTP/1.1
+content-type: application/json
+
+{
+    "id": 2,
+    "coursename": "Python",
+    "courseinfo": "Python is object oriented programming",
+    "courselanguage": "English",
+    "coursefees": 500.00
+  
+}
+
+### UPDATE an Courses 
+PUT  http://localhost:8081/api/courses/4 HTTP/1.1
+content-type: application/json
+
+{
+    "id": 4,
+    "userId": 2,
+    "coursename": "java",
+    "courseinfo": "java is object oriented programming",
+    "courselanguage": "English",
+    "coursefees": "600£"
+  
+}
+
+### Delete a Course
+DELETE    http://localhost:8081/api/courses/2
+
+
+
+
+
+
+
+#======================================================#
+### Get all Notifications
+GET http://localhost:8084/api/notifications
+
+### Get a Notification by id
+GET http://localhost:8084/api/notifications/7 
+
+
+### Add a Notification  
+POST  http://localhost:8084/api/notifications HTTP/1.1
+content-type: application/json
+
+{
+
+    "content": " Please the class",
+    "date": "1997-04-12"   
+    
+}
+
+### Update a Notification
+PUT   http://localhost:8084/api/notifications/4 HTTP/1.1
+content-type: application/json
+
+{
+    "id": 4,
+    "content": "All Please attend the next class ",
+    "date": "1998-04-12"  
+}
+
+### Delete a Notification
+DELETE    http://localhost:8084/api/notifications/6
+
+
+
+#===========================================================#
+### Get all timetables
+GET http://localhost:8080/api/timetables
+
+### Get a timetable by id
+GET http://localhost:8080/api/timetables/1
+
+
+
+### Add a timetable  
+POST  http://localhost:8080/api/timetables HTTP/1.1
+content-type: application/json
+
+{
+    "courseId": 1,
+    "day": "2023-02-12",
+    "start_time": "13:30:20" ,   
+    "end_time": "13:30:20",
+    "groupCat": "A"
+
+}
+### Update a timetable
+PUT   http://localhost:8080/api/timetables/1 HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "day": "2023-02-12",
+    "start_time": "15:30:20" ,   
+    "end_time": "15:30:20",
+    "groupCat": "A"
+}
+
+### Delete a timetable
+DELETE    http://localhost:8080/api/timetables/2
+
+
+
+#======================================================#
+### Get all payments
+GET http://localhost:8085/api/payments
+
+### Get a payment by id
+GET http://localhost:8085/api/payments/1
+
+
+### Pay to a course  
+POST  http://localhost:8085/api/enroll/payment HTTP/1.1
+content-type: application/json
+
+{
+   
+    "userId": 252,
+    "courseId": 103,
+    "payment_amount": 50.00,
+    "payment_date": "2023-04-27"
+} 
+
+
+### Add a payment  
+POST  http://localhost:8085/api/payments HTTP/1.1
+content-type: application/json
+
+{
+
+      "payment_amount": 600.00,
+      "payment_date": "1998-12-04"  ,
+      
+
+}
+### Update payment details
+PUT   http://localhost:8085/api/payments/1 HTTP/1.1
+content-type: application/json
+
+{
+      "id": 1,
+      "payment_amount":800.00,
+      "payment_date":"1995-04-12"
+}
+
+### Delete a payment
+DELETE    http://localhost:8085/api/payments/3
+
+#=======================================================#
+
+### Get all grades
+GET http://localhost:8082/api/grades
+
+
+
+### Get a grades by id
+GET http://localhost:8082/api/grades/1 
+
+### Add a grade  
+
+POST  http://localhost:8082/api/grades HTTP/1.1
+content-type: application/json
+
+{   
+    
+    "userId": 102,
+    "courseId": 1,
+    "student_grade": "A",
+    "transcript": "56778",   
+    "report": "need to study well",
+    "remarks":"improve" 
+    
+
+}
+
+### Update grade details
+
+PUT   http://localhost:8082/api/grades/1 HTTP/1.1
+content-type: application/json
+
+{
+
+    "userId": 102,
+    "courseId": 1,
+    "student_grads": "B",
+    "transcript": "56778",   
+    "report": "need to study well",
+    "remarks":"improve" 
+    
+
+}
+
+### Delete a grade
+DELETE    http://localhost:8082/api/grades/1
+
